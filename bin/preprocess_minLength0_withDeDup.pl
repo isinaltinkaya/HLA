@@ -10,7 +10,7 @@ my $F = 5;
 
 #min length after trimming
 # my $M = 70;
-my $M = 25;
+# my $M = 25;
 
 my $DEDUP = 0;
 if(`wc -l $ARGV[0]` > 50000){
@@ -70,7 +70,7 @@ while(<>)
 	}
 
 	# min length after trimming
-	next if length($seq) < $M;
+	# next if length($seq) < $M;
 
 	# max bad bases
 	my $fail_count;

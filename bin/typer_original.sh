@@ -7,21 +7,18 @@ set -eu -o pipefail
     exit 1;
 }
 
+
 ########################
 # EDIT BELOW
 # isinaltinkaya
 # 14/2/22
 #########################
 # BIN="`dirname \"$0\"`"
-BIN=${1}
+BIN=/path/to/xHLA/HLA/bin
 
-S3=${2}
-ID=${3}
-# OUT=hla-$ID
-OUTPUT_DIR=${4}
-OUT=${OUTPUT_DIR}/${ID}
-
-PREPROCESS_TYPE=${5}
+S3=$1
+ID=$2
+OUT=hla-$ID
 
 #########################
 
@@ -56,8 +53,7 @@ echo "Extracting reads from S3"
 samtools view -u $S3 chr6:29886751-33090696 | samtools view -L $BIN/../data/hla.bed - > ${TEMP}.sam
 
 ########################
-# $BIN/preprocess.pl
-$BIN/${PREPROCESS_TYPE}.pl ${TEMP}.sam | gzip > $OUT/$ID.fq.gz
+$BIN/preprocess.pl ${TEMP}.sam | gzip > $OUT/$ID.fq.gz
 rm ${TEMP}.sam
 echo "Aligning reads to IMGT database"
 if [ "$FULL" = true ]; then

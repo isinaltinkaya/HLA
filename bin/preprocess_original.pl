@@ -9,8 +9,7 @@ my $Q = 20;
 my $F = 5;
 
 #min length after trimming
-# my $M = 70;
-my $M = 25;
+my $M = 70;
 
 my $DEDUP = 0;
 if(`wc -l $ARGV[0]` > 50000){
