@@ -30,9 +30,9 @@ OUTPUT_DIR=${4}
 #
 # Three xHLA preprocessing versions available:
 #
-# 1) preprocess_minLength0_withDeDup.sh
-# 2) preprocess_minLength25_withDeDup.sh
-# 3) preprocess_minLength0_withoutDeDup.sh
+# 1) preprocess_minLength0_withDeDup
+# 2) preprocess_minLength25_withDeDup
+# 3) preprocess_minLength0_withoutDeDup
 
 
 # Version of xHLA preprocessing 
